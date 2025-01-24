@@ -1,67 +1,105 @@
 # MedicalSockets
-# Medical Chatbot Sockets
 
 ## Project Description
 
-The **Medical Chatbot Sockets** project enables users to join a chat room and interact with either other users or a bot. The project leverages WebSockets to provide real-time messaging, where users can either participate in a **Broadcast Room** to chat with multiple users or a **Bot Room** to interact with a bot.
+The **Medical Chatbot Sockets** project enables users to join a chat room and interact with either other users or a bot. This application uses WebSockets to provide real-time messaging, allowing users to participate in either:
+
+- **Broadcast Room**: A chat room for interacting with multiple users.
+- **Bot Room**: A dedicated room to interact with a bot.
 
 ## Setup Instructions
 
-1. **Clone the Repository:**
+### Prerequisites
 
-   Start by cloning the project to your local machine:
+- [Python](https://www.python.org/downloads/) (3.7 or higher)
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [Docker](https://www.docker.com/) (if using Docker)
+- Git
 
+### Step-by-Step Guide
+
+#### 1. Clone the Repository
+
+Start by cloning the project to your local machine:
+
+```bash
+git clone https://github.com/hamza9-bit/MedicalSockets.git
+```
+
+#### 2. Install Dependencies
+
+##### Backend (FastAPI with Python)
+
+1. Navigate to the server directory:
    ```bash
-   git clone https://github.com/hamza9-bit/MedicalSockets.git
-2. **Install Dependencies**
-Install Dependencies
-Backend (FastAPI with Python)
-Navigate to the server directory:
-```bash
-cd server
-Set up a virtual environment:
-```bash
-python -m venv venv
-Activate the virtual environment:
-.\venv\Scripts\activate
-Install the required dependencies:
+   cd server
+   ```
+2. Set up a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+3. Activate the virtual environment:
+   - On Windows:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+4. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Start the backend server using Uvicorn:
+   ```bash
+   uvicorn src.main:app --host 0.0.0.0 --port 8000
+   ```
+   The FastAPI backend server will now be running on [http://localhost:8000](http://localhost:8000).
 
+##### Frontend (React)
 
-pip install -r requirements.txt
-Start the backend server using uvicorn:
-uvicorn src.main:app --host 0.0.0.0 --port 8000
-The FastAPI backend server will now be running on http://localhost:8000.
+1. Navigate to the frontend directory:
+   ```bash
+   cd ../frontend
+   ```
+2. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the React development server:
+   ```bash
+   npm start
+   ```
+   The React frontend will now be running on [http://localhost:3000](http://localhost:3000).
 
-Frontend (React)
-Navigate to the frontend directory:
+### How to Run the Project Using Docker
 
-
-cd ../frontend
-Install the necessary dependencies:
-
-npm install
-Start the React development server:
-
-npm start
-The React frontend will now be running on http://localhost:3000.
-
-How to Run the Project Using Docker
 If you prefer to use Docker to run the project, follow these steps:
 
-1. Build and Run Docker Containers Using Docker Compose
-The project is configured to run both the frontend and backend services using Docker and Docker Compose. In the root directory of the project (where docker-compose.yml is located), run:
-bash
-Copy
-Edit
+#### 1. Build and Run Docker Containers Using Docker Compose
+
+The project is configured to run both the frontend and backend services using Docker and Docker Compose. In the root directory of the project (where `docker-compose.yml` is located), run:
+
+```bash
 docker-compose up --build
+```
+
 This command will:
 
-Build the Docker images for the frontend and backend services.
-Start both services in separate containers.
-By default, the frontend will be accessible at http://localhost:3000 and the backend at http://localhost:8000.
+- Build the Docker images for the frontend and backend services.
+- Start both services in separate containers.
 
-Stop the Application
+By default:
+
+- The frontend will be accessible at [http://localhost:3000](http://localhost:3000).
+- The backend will be accessible at [http://localhost:8000](http://localhost:8000).
+
+#### 2. Stop the Application
+
 To stop the containers, run:
-docker-compose down
 
+```bash
+docker-compose down
+```
 
