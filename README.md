@@ -17,8 +17,10 @@ The **Medical Chatbot Sockets** project enables users to join a chat room and in
 Install Dependencies
 Backend (FastAPI with Python)
 Navigate to the server directory:
+```bash
 cd server
 Set up a virtual environment:
+```bash
 python -m venv venv
 Activate the virtual environment:
 .\venv\Scripts\activate
