@@ -1,0 +1,6 @@
+# Node.js dependencies
+front/node_modules/
+# Venv inside server folder
+/server/venv/
+
+

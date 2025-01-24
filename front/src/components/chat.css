@@ -1,0 +1,60 @@
+.typing-indicator::after {
+    content: "...";
+    animation: dots 1.5s infinite steps(5, end);
+  }
+  
+  @keyframes dots {
+    0% {
+      content: ".";
+    }
+    33% {
+      content: "..";
+    }
+    66% {
+      content: "...";
+    }
+    100% {
+      content: ".";
+    }
+  }
+  .chat-box {
+  
+    overflow-y: auto;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+  }
+  
+  .text-muted {
+    font-size: 0.9rem;
+  }
+  
+  .bg-light {
+    background-color: #f1f1f1;
+  }
+  
+  .bg-info {
+    background-color: #17a2b8;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-end {
+    text-align: right;
+  }
+  
+  .text-start {
+    text-align: left;
+  }
+  
