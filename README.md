@@ -82,7 +82,7 @@ If you prefer to use Docker to run the project, follow these steps:
 The project is configured to run both the frontend and backend services using Docker and Docker Compose. In the root directory of the project (where `docker-compose.yml` is located), run:
 
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 
 This command will:
